@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+
+:root {
+  --primary-color: #3b3a3a;
+  --shadow: #ababab;
+}
+/* animation */
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes eye {
+  100% {
+    background-color: red;
+    height: 50px;
+  }
+}
+
+@keyframes eye2 {
+  100% {
+    height: 70px;
+  }
+}
+
+@keyframes light {
+  100% {
+    border-bottom-color: yellow;
+    box-shadow: 0 10px 200px orange;
+  }
+}
+
+@keyframes mouth {
+  100% {
+    transform: translate(16px, 40px);
+  }
+}
+
+@keyframes letter {
+  0% {
+    letter-spacing: 0;
+  }
+  100% {
+    letter-spacing: 8px;
+  }
+}
+
+/* style */
+body {
+  background-color: var(--primary-color);
+}
+
+.title {
+  font-family: "Rubik Wet Paint", cursive;
+  color: #c10000;
+  text-align: center;
+  font-size: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: normal;
+  animation: letter 1s infinite alternate;
+  text-shadow: 0 5px 2px #575757b8;
+  margin: 0;
+}
+
+.skull {
+  width: 230px;
+  margin: 150px auto;
+  position: relative;
+  animation: zoom 1s infinite alternate;
+}
+
+.head {
+  width: 230px;
+  height: 230px;
+  background-color: white;
+  border-radius: 50%;
+  animation: light 1s infinite alternate;
+}
+
+.head:after,
+.head:before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  display: block;
+  background-color: white;
+  border-radius: 50%;
+  border-bottom: 5px solid var(--shadow);
+}
+
+.head:after {
+  position: absolute;
+  transform: rotate(-65deg);
+  bottom: 10px;
+  right: -12px;
+}
+
+.head:before {
+  position: absolute;
+  transform: rotate(65deg);
+  bottom: 10px;
+  left: -12px;
+}
+
+.head-shadow:before {
+  content: "";
+  width: 80px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  border-top: 4px solid var(--shadow);
+  position: absolute;
+  left: 9px;
+  bottom: 74px;
+  transform: rotate(-26deg);
+}
+
+.head-shadow:after {
+  content: "";
+  width: 80px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  border-top: 4px solid var(--shadow);
+  position: absolute;
+  right: 9px;
+  bottom: 74px;
+  transform: rotate(26deg);
+}
+
+.wrinkle {
+  width: 78px;
+  height: 30px;
+  border-bottom: 5px solid var(--shadow);
+  border-radius: 50%;
+  transform: rotate(94deg);
+  position: absolute;
+  top: 75px;
+  left: 5px;
+}
+
+.wrinkle::after {
+  content: "";
+  width: 78px;
+  height: 30px;
+  border-bottom: 5px solid var(--shadow);
+  border-radius: 50%;
+  transform: scaleY(-1);
+  position: absolute;
+  bottom: 136px;
+  right: 8px;
+}
+
+.eye {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-color);
+  border-radius: 60% 61% 74% 39% / 58% 46% 73% 55%;
+  position: absolute;
+  border-left: 5px solid var(--shadow);
+  animation: eye2 0.5s alternate infinite;
+}
+
+.eye.left {
+  bottom: 40px;
+  left: 21px;
+}
+
+.eye.right {
+  bottom: 40px;
+  right: 21px;
+  transform: scaleX(-1);
+}
+
+.eye.left .pupil,
+.eye.right .pupil {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: inherit;
+  transform: translate(21px, 14px);
+  animation: eye 0.5s alternate infinite;
+}
+
+.nose {
+  width: 10px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 100% 1% 43% 57% / 67% 0% 100% 33%;
+  position: absolute;
+  position: absolute;
+}
+
+.nose.left {
+  left: 102px;
+  bottom: 25px;
+}
+
+.nose.right {
+  right: 102px;
+  bottom: 25px;
+  transform: scaleX(-1);
+}
+
+.mouse {
+  width: 133px;
+  height: 44px;
+  background-color: white;
+  border-radius: 27% 25% 43% 47% / 99% 100% 70% 69%;
+  position: absolute;
+  bottom: -23px;
+  left: 47px;
+}
+
+.mouse:after {
+  content: "";
+  display: block;
+  width: 102px;
+  height: 26px;
+  border-radius: 20px 20px 12px 12px;
+  background-color: white;
+  transform: translate(16px, 18px);
+  animation: mouth 1s infinite alternate;
+}
+
+.tooth {
+  width: 7px;
+  height: 27px;
+  border-radius: 8px 8px 0 0;
+  background-color: lightgray;
+  transform: translate(32px, 17px);
+  display: inline-block;
+  margin-right: 11px;
+}
